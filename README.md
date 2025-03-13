@@ -16,7 +16,7 @@ On the UP SEA server, you must use the `iacpy3_2024` environment in your jupyter
 Then, in the notebook, run the following:
 
 ```python
-%pip install --user git+https://github.com/lukegre/roms-regrid.git
+%pip install --user git+https://github.com/lukegre/roms_regrid.git
 # the code obove installs it from the git repo to your ~/.local/ folder
 ```
 
