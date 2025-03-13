@@ -1,0 +1,81 @@
+ROMS_humpbac15_r105: 
+    # fname must have a {t:int} part in the name - this defines the different time steps
+    fname: /net/sea/work/koehne/roms/output/humpac15/hindcast_1979_2019/hindcast_r105_humpac15/daily/avg/humpac15_{t:04d}_avg.nc
+    metadata:  # this isn't used but can be useful
+        creator: eike  
+        name: humpbac15
+        run: 
+            type: hindcast
+            version: r105
+        grid: 
+            type: curvilinear
+            description: high resolution around Peru region 
+        time:
+            resolution: daily  
+    time:  # this is used to load files, so is required
+        start: 1979
+        end: 2019
+        step: 1
+    variables:  # the lat, lon, x, y are automatically added
+        PCO2OC: pco2sea
+        temp: temp
+        salt: salt
+        TOT_CHL: chl_total
+        pCO2air: pco2air
+        zeta: ssh
+        mask_rho: sea_mask
+    subset:
+        s_rho: -1
+
+
+ROMS_pactcs30_hc006:
+    fname: /net/meso/work/fdesmet/roms/output/pactcs30/hc006_daily_pactcs30/avg/pactcs30_{t:04d}_avg.nc
+    metadata:
+        creator: flora
+        run:
+            type: hindcast
+            version: hc006
+        grid: 
+            type: curvilinear
+            description: high resolution around California Current System
+    time:
+        resolution: daily
+        start: 1979
+        end: 2019
+        step: 1
+    variables:
+        PCO2OC: pco2sea
+        temp: temp
+        salt: salt
+        TOT_CHL: chl_total
+        pCO2air: pco2air
+        zeta: ssh
+        mask_rho: sea_mask
+    subset:
+        s_rho: -1
+    
+
+ROMS_amacanc_hc_weno:
+    fname: /net/sea/work/loher/ROMS/amacanc_Lp576_18_Domitille/hindcast_weno/output/avg/amacanc_Lp57601_avg.{t:05d}.nc
+    creator: domitille
+    run: 
+        type: hindcast (what does weno mean)
+        version: Lp57601
+    grid:
+        type: curvilinear
+        description: high resolution around Amazon River outflow
+    time: 
+        resolution: not defined
+        start: 0
+        end: 480
+        step: 12
+    variables:
+        PCO2OC: pco2sea
+        temp: temp
+        salt: salt
+        TOT_CHL: chl_total
+        pCO2air: pco2air
+        zeta: ssh
+        mask_rho: sea_mask
+    subset:
+        s_rho: -1
