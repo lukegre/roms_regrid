@@ -9,13 +9,26 @@ Quick overview
 - `ROMSRegridder(ds, res_out, bbox_out=[W,S,E,N])` -> regridder(ds_roms) -> ds_regridded
 - `plot_map(ds_roms.pco2sea)` -> fig, axs, img 
 
+## Installation
 
+On the UP SEA server, you must use the `iacpy3_2024` environment in your jupyter notebook.
+
+Then, in the notebook, run the following:
+
+```python
+%pip install --user git+https://github.com/lukegre/roms-regrid.git
+# the code obove installs it from the git repo to your ~/.local/ folder
+```
 
 ## Usage
 
 ### Setting up the package
 ```python
-from src import regrid_roms as rr
+# we use site to add the ~/.local/ folder to the python path
+import site
+site.addsitedir(site.USER_SITE)
+
+import regrid_roms as rr
 
 # setting up the data sources is critical! 
 # have a look at how I've done this 
